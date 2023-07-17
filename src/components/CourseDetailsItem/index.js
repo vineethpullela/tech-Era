@@ -1,26 +1,19 @@
-import {
-  CourseDetailsCard,
-  CourseDetailsImage,
-  CourseDetailsTitle,
-  CourseDetailsInfo,
-  CourseInfoContainer,
-  CourseDetailsContainer,
-} from './styledComponents'
+import './index.css'
 
 const CourseDetailsItem = props => {
   const {courseItemDetails} = props
   const {name, description, imageUrl} = courseItemDetails
 
   return (
-    <CourseDetailsCard>
-      <CourseDetailsContainer>
-        <CourseDetailsImage src={imageUrl} alt={name} />
-        <CourseInfoContainer>
-          <CourseDetailsTitle>{name}</CourseDetailsTitle>
-          <CourseDetailsInfo>{description}</CourseDetailsInfo>
-        </CourseInfoContainer>
-      </CourseDetailsContainer>
-    </CourseDetailsCard>
+    <li className="course-detail-card">
+      <div className="course-detail-container">
+        <img className="course-details-image" src={imageUrl} alt={name} />
+        <div className="course-info-container">
+          <h1 className="course-detail-title">{name}</h1>
+          <p className="course-detail-info">{description}</p>
+        </div>
+      </div>
+    </li>
   )
 }
 
